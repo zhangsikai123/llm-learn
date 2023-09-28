@@ -1,0 +1,55 @@
+default_language_version:
+    python: python3
+repos:
+  - repo: local
+    hooks:
+    - id: my-reorder-imports
+      name: Reorder Imports
+      language: python
+      entry: python3 fmt.py
+      files: '^.*\.py$'
+      types: [python]
+
+  - repo: https://github.com/asottile/reorder_python_imports.git
+    rev: v2.5.0
+    hooks:
+    - id: reorder-python-imports
+      args:
+      - --separate-relative
+      - --separate-from-import
+      - --remove-import
+      - from __future__ import absolute_import
+      - --remove-import
+      - from __future__ import division
+      - --remove-import
+      - from __future__ import print_function
+      - --remove-import
+      - from __future__ import unicode_literals
+      - --remove-import
+      - from __future__ import with_statement
+
+  - repo: https://github.com/psf/black.git
+    rev: 22.10.0
+    hooks:
+      - id: black
+        name: black
+        language: python
+        entry: black
+        types: [python]
+        additional_dependencies: ['click==8.0.4']
+
+  - repo: https://github.com/PyCQA/flake8.git
+    rev: 3.7.9
+    hooks:
+      - id: flake8
+        language: python
+        args:
+          - --ignore=W503,E203,E402
+          - --exclude=tests/*
+
+
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.1
+    hooks:
+    - id: autoflake
+      args: [--remove-all-unused-imports, --in-place]
