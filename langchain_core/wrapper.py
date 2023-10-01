@@ -48,12 +48,12 @@ class ChatChainWrapper(HyperParameters):
             if role.lower() == "q":
                 break
             template = (
-                """you are a """
+                "you are a"
                 + role
                 + """ and you are asked the following question:
-            {context}
-            Question: {question}
-            Helpful Answer:"""
+                {context}
+                Question: {question}
+                Helpful Answer:"""
             )
             QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
 
