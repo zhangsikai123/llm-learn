@@ -1,14 +1,12 @@
-from langchain_core.wrapper import ChatChainWrapper
-
-from langchain.chat_models import ChatOpenAI
-from langchain.document_loaders import WebBaseLoader
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
 from bs4 import BeautifulSoup as Soup
 from langchain.document_loaders.recursive_url_loader import RecursiveUrlLoader
+from langchain.embeddings import OpenAIEmbeddings
 from langchain.memory import ConversationSummaryMemory
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.vectorstores import Chroma
+
 from langchain_core.models import chatgpt_three_point_five_turbo
+from langchain_core.wrapper import ChatChainWrapper
 
 url = "https://python.langchain.com/docs/use_cases"
 loader = RecursiveUrlLoader(

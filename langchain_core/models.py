@@ -1,4 +1,5 @@
 import dotenv
+
 from langchain.chat_models import ChatOpenAI
 
 dotenv.load_dotenv()
