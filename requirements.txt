@@ -54,7 +54,7 @@ mypy-extensions==1.0.0
 nltk==3.8.1
 nodeenv==1.8.0
 numexpr==2.8.6
-numpy==1.26.0
+numpy==1.24.4
 onnxruntime==1.16.0
 openai==0.28.1
 overrides==7.4.0

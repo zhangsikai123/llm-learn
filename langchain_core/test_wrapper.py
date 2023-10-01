@@ -5,7 +5,7 @@ from langchain.memory import ConversationSummaryMemory
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 
-from langchain_core.models import chatgpt_three_point_five_turbo
+from langchain_core.models.chatgpt import chatgpt_three_point_five_turbo
 from langchain_core.wrapper import ChatChainWrapper
 
 url = "https://python.langchain.com/docs/use_cases"
