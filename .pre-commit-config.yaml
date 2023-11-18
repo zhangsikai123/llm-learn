@@ -1,6 +1,17 @@
 default_language_version:
     python: python3
+
 repos:
+  - repo: local
+    hooks:
+    - id: clean-debug-code
+      name: Clean Debug Code
+      language: python
+      entry: python3 clean_debug.py
+      files: '^.*\.py$'
+      always_run: true
+      types: [python]
+
   - repo: local
     hooks:
     - id: my-reorder-imports
@@ -45,7 +56,7 @@ repos:
         language: python
         args:
           - --ignore=W503,E203,E402
-          - --exclude=tests/*
+          - --exclude=tests/*,sky_langchain/loaders/*
 
 
   - repo: https://github.com/PyCQA/autoflake

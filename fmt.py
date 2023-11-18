@@ -13,7 +13,7 @@ def reorder_imports(input_file, output_file):
         if line.strip().startswith("import ") or line.strip().startswith("from "):
             # Found a non-import line, imports are not at the top
             counter.append(i)
-    if counter[0] != 0:
+    if lines and counter[0] != 0:
         imports_at_top = False
     for i, line in enumerate(lines):
         if (

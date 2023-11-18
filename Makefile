@@ -7,4 +7,4 @@ fix:
 	make lint
 	git push
 test:
-	python -m langchain_core.test_wrapper
+	python -m sky_langchain.test_wrapper
